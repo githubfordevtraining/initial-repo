@@ -1,7 +1,7 @@
 # GitHub for Developers
 
 - Class Date: Aug 20-21, 2024
-- Facilitator: @Parul Mahajan()[DCSA)
+- Facilitator: @Parul Mahajan
 
 ## Class Resources
 
