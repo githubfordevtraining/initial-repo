@@ -2,7 +2,6 @@
 
 - Class Date: Aug 20-21, 2024
 - Facilitator: @Parul Mahajan
--Rishi VEdpathi
 
 ## Class Resources
 
