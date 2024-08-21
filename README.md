@@ -2,7 +2,7 @@
 
 - Class Date: Aug 20-21, 2024
 - Facilitator: @Parul Mahajan
-
+new 
 ## Class Resources
 
 - [GitHub for Developers Manual](https://githubtraining.github.io/training-manual/#/)
