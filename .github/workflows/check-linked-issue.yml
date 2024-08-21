@@ -1,0 +1,29 @@
+name: Ensure PR has a Linked Issue
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-linked-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check PR for linked issue
+        id: check_for_issue_link
+        run: |
+          pr_body=$(jq -r .pull_request.body "$GITHUB_EVENT_PATH")
+          echo "PR Body: $pr_body"
+
+          # Check if the PR description contains a reference to an issue (e.g., "Closes #123")
+          if [[ "$pr_body" != *"Closes #"* ]] && [[ "$pr_body" != *"Fixes #"* ]] && [[ "$pr_body" != *"Resolves #"* ]]; then
+            echo "Error: PR does not reference any issue."
+            exit 1
+          fi
+
+      - name: Set failure status
+        if: failure()
+        run: exit 1
